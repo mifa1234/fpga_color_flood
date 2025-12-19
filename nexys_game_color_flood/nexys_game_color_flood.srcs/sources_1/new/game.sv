@@ -896,8 +896,8 @@ always_ff@(posedge clk)
 begin
      
      if(cnt_v[10:5] == 5'd14) begin //draw track bar //win_player
-         {r_vga, g_vga, b_vga} <= (flg_imag & (INDICATE_WHO_STEP == 1) & (win_player == 2'd0) & counter_frame_vga[5] & (cnt_h < track_bar_USER) & ((cnt_v[4:0] == 5'd0) || (cnt_v[4:0] == 5'd31) || (cnt_h == 'd0) || (cnt_h == (track_bar_USER-1)))) ? 12'hFFF :
-                                  (flg_imag & (INDICATE_WHO_STEP == 1) & (ONLY_GAME_MODE_0 == 0) & (win_player == 2'd1) & counter_frame_vga[5] & (cnt_h > track_bar_PC) & ((cnt_v[4:0] == 5'd0) || (cnt_v[4:0] == 5'd31) || (cnt_h == 'd639) || (cnt_h == (track_bar_PC+1)))) ? 12'hFFF :
+         {r_vga, g_vga, b_vga} <= (flg_imag  & (win_player == 2'd0) & counter_frame_vga[5] & (cnt_h < track_bar_USER) & ((cnt_v[4:0] == 5'd0) || (cnt_v[4:0] == 5'd31) || (cnt_h == 'd0) || (cnt_h == (track_bar_USER-1)))) ? 12'hFFF :
+                                  (flg_imag  & (ONLY_GAME_MODE_0 == 0) & (win_player == 2'd1) & counter_frame_vga[5] & (cnt_h > track_bar_PC) & ((cnt_v[4:0] == 5'd0) || (cnt_v[4:0] == 5'd31) || (cnt_h == 'd639) || (cnt_h == (track_bar_PC+1)))) ? 12'hFFF :
                                   (flg_imag & (cnt_h < track_bar_USER)) ? COLOR_TRACK_BAR_USER : 
                                   (flg_imag & (cnt_h > track_bar_PC))   ? COLOR_TRACK_BAR_PC :
                                   (flg_imag) ? COLOR_TRACK_BAR :
