@@ -879,9 +879,9 @@ begin
 		cnt_h <= 'd0;
 		if(cnt_v >= 'd524) begin //480 + 10 + 2(sync) + 33
 			cnt_v <= 'd0;
-			if(INDICATE_WHO_STEP == 1) begin
+			//if(INDICATE_WHO_STEP == 1) begin
 			 counter_frame_vga <= counter_frame_vga + 1;
-			end			
+			//end			
 		end else begin
 			cnt_v <= cnt_v + 1;
 		end
