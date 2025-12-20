@@ -1,6 +1,7 @@
 # fpga_color_flood
 Implementation of the ColorFlood game on FPGA. Vendor-agnostic.
 
+Статья на русском языке об этом проекте: https://habr.com/ru/articles/978794/
 
 # ColorFlood Game for FPGA
 
